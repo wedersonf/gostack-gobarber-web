@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FiClock, FiPower } from 'react-icons/fi';
 import {
@@ -8,14 +8,17 @@ import {
   Profile,
   Content,
   Schedule,
-  Calendar,
   NextAppointment,
+  Section,
+  Appointment,
+  Calendar,
 } from './styles';
 
 import logoImg from '../../assets/logo.svg';
 import { useAuth } from '../../hooks/Auth';
 
 const Dashboard: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
   const { signOut, user } = useAuth();
 
   return (
@@ -62,6 +65,60 @@ const Dashboard: React.FC = () => {
               </span>
             </div>
           </NextAppointment>
+
+          <Section>
+            <strong>Manhã</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars.githubusercontent.com/u/6026604?s=460&u=0c949dcc09394daebd2ea5a3b796a39054d3ad39&v=4"
+                  alt="Wederson Fagundes"
+                />
+
+                <strong>Wederson Fagundes</strong>
+              </div>
+            </Appointment>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars.githubusercontent.com/u/6026604?s=460&u=0c949dcc09394daebd2ea5a3b796a39054d3ad39&v=4"
+                  alt="Wederson Fagundes"
+                />
+
+                <strong>Wederson Fagundes</strong>
+              </div>
+            </Appointment>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars.githubusercontent.com/u/6026604?s=460&u=0c949dcc09394daebd2ea5a3b796a39054d3ad39&v=4"
+                  alt="Wederson Fagundes"
+                />
+
+                <strong>Wederson Fagundes</strong>
+              </div>
+            </Appointment>
+
+            <strong>Tarde</strong>
+          </Section>
         </Schedule>
 
         <Calendar />
